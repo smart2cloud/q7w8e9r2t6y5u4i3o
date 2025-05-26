@@ -896,7 +896,7 @@
         data.filter(item => item.status === '1').forEach(item => {
             if (item.updated_date) {
                 const updatedDate = new Date(item.updated_date);
-                if (!isNaN(updatedDate.getTime()) {
+                if (!isNaN(updatedDate.getTime())) {
                     if (!latestDate || updatedDate > latestDate) {
                         latestDate = updatedDate;
                     }
