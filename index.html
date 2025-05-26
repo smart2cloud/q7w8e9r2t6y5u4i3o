@@ -544,8 +544,6 @@
         </div>
     </div>
 
-
-
 <script>
     // Language translations
     const translations = {
@@ -705,7 +703,7 @@
     // Configuration
     const refreshInterval = 30000; // Auto refresh every 30 seconds
     const itemsPerPage = 15;
-    const CSV_URL = 'https://raw.githubusercontent.com/smart2cloud/x7z9kq_log/78804af50dafcaa800fa5c7a1e95da158a224899/x7z9kq_log/x7z9kq_log.csv';
+    const CSV_URL = 'https://raw.githubusercontent.com/smart2cloud/ncsbdfsekjbbj/refs/heads/master/x7z9kq_log/aoifjenqn.csv';
 
     // Global variables
     let allData = [];
@@ -883,11 +881,11 @@
         updatePagination(data.length);
     }
 
-    // Update statistics - FIXED: Corrected syntax error and logic
+    // Update statistics
     function updateStats(data) {
         const totalImages = data.length;
         const processedImages = data.filter(item => item.status === '1').length;
-        const processingImages = data.filter(item => item.status === '2').length; // Fixed: should be status '2' for processing
+        const processingImages = data.filter(item => item.status === '2').length;
         
         totalImagesEl.textContent = totalImages;
         processedImagesEl.textContent = processedImages;
@@ -898,7 +896,7 @@
         data.filter(item => item.status === '1').forEach(item => {
             if (item.updated_date) {
                 const updatedDate = new Date(item.updated_date);
-                if (!isNaN(updatedDate.getTime())) { // Fixed: Added missing closing parenthesis
+                if (!isNaN(updatedDate.getTime()) {
                     if (!latestDate || updatedDate > latestDate) {
                         latestDate = updatedDate;
                     }
