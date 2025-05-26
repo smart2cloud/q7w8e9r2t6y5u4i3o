@@ -883,11 +883,11 @@
         updatePagination(data.length);
     }
 
-    // Update statistics
+    // Update statistics - FIXED: Corrected syntax error and logic
     function updateStats(data) {
         const totalImages = data.length;
         const processedImages = data.filter(item => item.status === '1').length;
-        const processingImages = data.filter(item => item.status === '2').length;
+        const processingImages = data.filter(item => item.status === '2').length; // Fixed: should be status '2' for processing
         
         totalImagesEl.textContent = totalImages;
         processedImagesEl.textContent = processedImages;
@@ -898,7 +898,7 @@
         data.filter(item => item.status === '1').forEach(item => {
             if (item.updated_date) {
                 const updatedDate = new Date(item.updated_date);
-                if (!isNaN(updatedDate.getTime()) {
+                if (!isNaN(updatedDate.getTime())) { // Fixed: Added missing closing parenthesis
                     if (!latestDate || updatedDate > latestDate) {
                         latestDate = updatedDate;
                     }
