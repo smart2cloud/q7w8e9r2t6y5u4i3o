@@ -545,679 +545,752 @@
     </div>
 
     <script>
-        // Language translations
-        const translations = {
-            en: {
-                langButton: 'AR',
-                title: 'Image Processing Dashboard',
-                subtitle: 'Monitor your image processing pipeline in real-time',
-                uploadTitle: 'Upload CSV Data',
-                uploadDescription: 'Select a CSV file to visualize your image processing data',
-                uploadBtn: 'Upload',
-                totalImagesTitle: 'Total Images',
-                totalImagesDesc: 'Total images in the processing pipeline',
-                processedImagesTitle: 'Processed Images',
-                processedImagesDesc: 'Successfully processed images',
-                processingImagesTitle: 'Processing',
-                processingImagesDesc: 'Images currently being processed',
-                lastUpdatedTitle: 'Last Updated',
-                lastUpdatedDesc: 'Time of the latest updated image',
-                queueTitle: 'Processing Queue',
-                refreshBtn: 'Refresh Data',
-                searchPlaceholder: 'Search images...',
-                filterAll: 'All',
-                filterPending: 'Pending',
-                filterCompleted: 'Completed',
-                filterFailed: 'Failed',
-                thSubfolder: 'Subfolder',
-                thImageName: 'Image Name',
-                thSize: 'Size (KB)',
-                thCreatedDate: 'Created Date',
-                thStatus: 'Status',
-                thUpdatedDate: 'Updated Date',
-                thLog: 'Log',
-                noDataMessage: 'Please upload a CSV file to view data',
-                footerText: '© 2025 Image Processing Pipeline Dashboard',
-                statusPending: 'Pending',
-                statusCompleted: 'Completed',
-                statusProcessing: 'Processing',
-                statusFailed: 'Failed',
-                statusUnknown: 'Unknown',
-                noUpdatedImages: 'No updated images',
-                loadingData: 'Loading data...',
-                errorLoadingData: 'Error loading data from GitHub. Please try uploading a CSV file manually.',
-                dataLoadedSuccessfully: 'Data loaded successfully from GitHub!',
-                fileSelectedMessage: 'File selected. Click Upload to process.',
-                selectFileFirst: 'Please select a CSV file first'
-            },
-            ar: {
-                langButton: 'EN',
-                title: 'لوحة معالجة الصور',
-                subtitle: 'راقب خط معالجة الصور الخاص بك في الوقت الفعلي',
-                uploadTitle: 'رفع بيانات CSV',
-                uploadDescription: 'اختر ملف CSV لعرض بيانات معالجة الصور',
-                uploadBtn: 'رفع',
-                totalImagesTitle: 'إجمالي الصور',
-                totalImagesDesc: 'إجمالي الصور في خط المعالجة',
-                processedImagesTitle: 'الصور المعالجة',
-                processedImagesDesc: 'الصور التي تمت معالجتها بنجاح',
-                processingImagesTitle: 'قيد المعالجة',
-                processingImagesDesc: 'الصور التي يتم معالجتها حاليًا',
-                lastUpdatedTitle: 'آخر تحديث',
-                lastUpdatedDesc: 'وقت آخر صورة تم تحديثها',
-                queueTitle: 'قائمة انتظار المعالجة',
-                refreshBtn: 'تحديث البيانات',
-                searchPlaceholder: 'البحث في الصور...',
-                filterAll: 'الكل',
-                filterPending: 'في الانتظار',
-                filterCompleted: 'مكتملة',
-                filterFailed: 'فاشلة',
-                thSubfolder: 'المجلد الفرعي',
-                thImageName: 'اسم الصورة',
-                thSize: 'الحجم (كيلوبايت)',
-                thCreatedDate: 'تاريخ الإنشاء',
-                thStatus: 'الحالة',
-                thUpdatedDate: 'تاريخ التحديث',
-                thLog: 'السجل',
-                noDataMessage: 'يرجى رفع ملف CSV لعرض البيانات',
-                footerText: '© 2025 لوحة معالجة الصور',
-                statusPending: 'في الانتظار',
-                statusCompleted: 'مكتملة',
-                statusProcessing: 'قيد المعالجة',
-                statusFailed: 'فاشلة',
-                statusUnknown: 'غير معروف',
-                noUpdatedImages: 'لا توجد صور محدثة',
-                loadingData: 'جاري تحميل البيانات...',
-                errorLoadingData: 'خطأ في تحميل البيانات من GitHub. يرجى محاولة رفع ملف CSV يدوياً.',
-                dataLoadedSuccessfully: 'تم تحميل البيانات بنجاح من GitHub!',
-                fileSelectedMessage: 'تم اختيار الملف. انقر على رفع للمعالجة.',
-                selectFileFirst: 'يرجى اختيار ملف CSV أولاً'
-            }
-        };
+      
+// Language translations
+const translations = {
+    en: {
+        langButton: 'AR',
+        title: 'Image Processing Dashboard',
+        subtitle: 'Monitor your image processing pipeline in real-time',
+        uploadTitle: 'Upload CSV Data',
+        uploadDescription: 'Select a CSV file to visualize your image processing data',
+        uploadBtn: 'Upload',
+        totalImagesTitle: 'Total Images',
+        totalImagesDesc: 'Total images in the processing pipeline',
+        processedImagesTitle: 'Processed Images',
+        processedImagesDesc: 'Successfully processed images',
+        processingImagesTitle: 'Processing',
+        processingImagesDesc: 'Images currently being processed',
+        lastUpdatedTitle: 'Last Updated',
+        lastUpdatedDesc: 'Time of the latest updated image',
+        queueTitle: 'Processing Queue',
+        refreshBtn: 'Refresh Data',
+        searchPlaceholder: 'Search images...',
+        filterAll: 'All',
+        filterPending: 'Pending',
+        filterCompleted: 'Completed',
+        filterFailed: 'Failed',
+        thSubfolder: 'Subfolder',
+        thImageName: 'Image Name',
+        thSize: 'Size (KB)',
+        thCreatedDate: 'Created Date',
+        thStatus: 'Status',
+        thUpdatedDate: 'Updated Date',
+        thLog: 'Log',
+        noDataMessage: 'Please upload a CSV file to view data',
+        footerText: '© 2025 Image Processing Pipeline Dashboard',
+        statusPending: 'Pending',
+        statusCompleted: 'Completed',
+        statusProcessing: 'Processing',
+        statusFailed: 'Failed',
+        statusUnknown: 'Unknown',
+        noUpdatedImages: 'No updated images',
+        loadingData: 'Loading data...',
+        errorLoadingData: 'Error loading data from GitHub. Please try uploading a CSV file manually.',
+        dataLoadedSuccessfully: 'Data loaded successfully from GitHub!',
+        fileSelectedMessage: 'File selected. Click Upload to process.',
+        selectFileFirst: 'Please select a CSV file first'
+    },
+    ar: {
+        langButton: 'EN',
+        title: 'لوحة معالجة الصور',
+        subtitle: 'راقب خط معالجة الصور الخاص بك في الوقت الفعلي',
+        uploadTitle: 'رفع بيانات CSV',
+        uploadDescription: 'اختر ملف CSV لعرض بيانات معالجة الصور',
+        uploadBtn: 'رفع',
+        totalImagesTitle: 'إجمالي الصور',
+        totalImagesDesc: 'إجمالي الصور في خط المعالجة',
+        processedImagesTitle: 'الصور المعالجة',
+        processedImagesDesc: 'الصور التي تمت معالجتها بنجاح',
+        processingImagesTitle: 'قيد المعالجة',
+        processingImagesDesc: 'الصور التي يتم معالجتها حاليًا',
+        lastUpdatedTitle: 'آخر تحديث',
+        lastUpdatedDesc: 'وقت آخر صورة تم تحديثها',
+        queueTitle: 'قائمة انتظار المعالجة',
+        refreshBtn: 'تحديث البيانات',
+        searchPlaceholder: 'البحث في الصور...',
+        filterAll: 'الكل',
+        filterPending: 'في الانتظار',
+        filterCompleted: 'مكتملة',
+        filterFailed: 'فاشلة',
+        thSubfolder: 'المجلد الفرعي',
+        thImageName: 'اسم الصورة',
+        thSize: 'الحجم (كيلوبايت)',
+        thCreatedDate: 'تاريخ الإنشاء',
+        thStatus: 'الحالة',
+        thUpdatedDate: 'تاريخ التحديث',
+        thLog: 'السجل',
+        noDataMessage: 'يرجى رفع ملف CSV لعرض البيانات',
+        footerText: '© 2025 لوحة معالجة الصور',
+        statusPending: 'في الانتظار',
+        statusCompleted: 'مكتملة',
+        statusProcessing: 'قيد المعالجة',
+        statusFailed: 'فاشلة',
+        statusUnknown: 'غير معروف',
+        noUpdatedImages: 'لا توجد صور محدثة',
+        loadingData: 'جاري تحميل البيانات...',
+        errorLoadingData: 'خطأ في تحميل البيانات من GitHub. يرجى محاولة رفع ملف CSV يدوياً.',
+        dataLoadedSuccessfully: 'تم تحميل البيانات بنجاح من GitHub!',
+        fileSelectedMessage: 'تم اختيار الملف. انقر على رفع للمعالجة.',
+        selectFileFirst: 'يرجى اختيار ملف CSV أولاً'
+    }
+};
 
-        // Current language
-        let currentLang = 'en';
+// Current language
+let currentLang = 'en';
 
-        // Toggle language function
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            updateLanguage();
+// Toggle language function
+function toggleLanguage() {
+    console.log('Toggle language called, current:', currentLang);
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    console.log('New language:', currentLang);
+    updateLanguage();
+}
+
+// Update language function with better error handling
+function updateLanguage() {
+    console.log('Updating language to:', currentLang);
+    const t = translations[currentLang];
+    
+    // Update body direction
+    document.body.classList.toggle('rtl', currentLang === 'ar');
+    document.documentElement.lang = currentLang;
+    
+    // Helper function to safely update element text
+    function safeUpdateElement(id, text) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = text;
+        } else {
+            console.warn(`Element with id '${id}' not found`);
         }
-
-        // Update language function
-        function updateLanguage() {
-            const t = translations[currentLang];
-            
-            // Update body direction
-            document.body.classList.toggle('rtl', currentLang === 'ar');
-            document.documentElement.lang = currentLang;
-            
-            // Update all text elements
-            document.getElementById('lang-text').textContent = t.langButton;
-            document.getElementById('main-title').textContent = t.title;
-            document.getElementById('main-subtitle').textContent = t.subtitle;
-            document.getElementById('upload-title').textContent = t.uploadTitle;
-            document.getElementById('upload-description').textContent = t.uploadDescription;
-            document.getElementById('upload-btn-text').textContent = t.uploadBtn;
-            document.getElementById('total-images-title').textContent = t.totalImagesTitle;
-            document.getElementById('total-images-desc').textContent = t.totalImagesDesc;
-            document.getElementById('processed-images-title').textContent = t.processedImagesTitle;
-            document.getElementById('processed-images-desc').textContent = t.processedImagesDesc;
-            document.getElementById('processing-images-title').textContent = t.processingImagesTitle;
-            document.getElementById('processing-images-desc').textContent = t.processingImagesDesc;
-            document.getElementById('last-updated-title').textContent = t.lastUpdatedTitle;
-            document.getElementById('last-updated-desc').textContent = t.lastUpdatedDesc;
-            document.getElementById('queue-title').textContent = t.queueTitle;
-            document.getElementById('refresh-btn-text').textContent = t.refreshBtn;
-            document.getElementById('search-input').placeholder = t.searchPlaceholder;
-            document.getElementById('filter-all-text').textContent = t.filterAll;
-            document.getElementById('filter-pending-text').textContent = t.filterPending;
-            document.getElementById('filter-completed-text').textContent = t.filterCompleted;
-            document.getElementById('filter-failed-text').textContent = t.filterFailed;
-            document.getElementById('th-subfolder').textContent = t.thSubfolder;
-            document.getElementById('th-image-name').textContent = t.thImageName;
-            document.getElementById('th-size').textContent = t.thSize;
-            document.getElementById('th-created-date').textContent = t.thCreatedDate;
-            document.getElementById('th-status').textContent = t.thStatus;
-            document.getElementById('th-updated-date').textContent = t.thUpdatedDate;
-            document.getElementById('th-log').textContent = t.thLog;
-            document.getElementById('footer-text').textContent = t.footerText;
-            
-            // Update status mapping for current language
-            statusMap = {
-                '0': { text: t.statusPending, class: 'status-0' },
-                '1': { text: t.statusCompleted, class: 'status-1' },
-                '2': { text: t.statusProcessing, class: 'status-2' },
-                '-1': { text: t.statusFailed, class: 'status--1' }
-            };
-            
-            // Update no data message if visible
-            const noDataCell = document.getElementById('no-data-message');
-            if (noDataCell) {
-                noDataCell.textContent = t.noDataMessage;
-            }
-            
-            // Refresh table if data exists
-            if (allData.length > 0) {
-                updateTable(filteredData);
-                updateStats(allData);
-            }
+    }
+    
+    // Helper function to safely update element attribute
+    function safeUpdateAttribute(id, attribute, value) {
+        const element = document.getElementById(id);
+        if (element) {
+            element[attribute] = value;
+        } else {
+            console.warn(`Element with id '${id}' not found`);
         }
+    }
+    
+    // Update all text elements with error handling
+    safeUpdateElement('lang-text', t.langButton);
+    safeUpdateElement('main-title', t.title);
+    safeUpdateElement('main-subtitle', t.subtitle);
+    safeUpdateElement('upload-title', t.uploadTitle);
+    safeUpdateElement('upload-description', t.uploadDescription);
+    safeUpdateElement('upload-btn-text', t.uploadBtn);
+    safeUpdateElement('total-images-title', t.totalImagesTitle);
+    safeUpdateElement('total-images-desc', t.totalImagesDesc);
+    safeUpdateElement('processed-images-title', t.processedImagesTitle);
+    safeUpdateElement('processed-images-desc', t.processedImagesDesc);
+    safeUpdateElement('processing-images-title', t.processingImagesTitle);
+    safeUpdateElement('processing-images-desc', t.processingImagesDesc);
+    safeUpdateElement('last-updated-title', t.lastUpdatedTitle);
+    safeUpdateElement('last-updated-desc', t.lastUpdatedDesc);
+    safeUpdateElement('queue-title', t.queueTitle);
+    safeUpdateElement('refresh-btn-text', t.refreshBtn);
+    safeUpdateAttribute('search-input', 'placeholder', t.searchPlaceholder);
+    safeUpdateElement('filter-all-text', t.filterAll);
+    safeUpdateElement('filter-pending-text', t.filterPending);
+    safeUpdateElement('filter-completed-text', t.filterCompleted);
+    safeUpdateElement('filter-failed-text', t.filterFailed);
+    safeUpdateElement('th-subfolder', t.thSubfolder);
+    safeUpdateElement('th-image-name', t.thImageName);
+    safeUpdateElement('th-size', t.thSize);
+    safeUpdateElement('th-created-date', t.thCreatedDate);
+    safeUpdateElement('th-status', t.thStatus);
+    safeUpdateElement('th-updated-date', t.thUpdatedDate);
+    safeUpdateElement('th-log', t.thLog);
+    safeUpdateElement('footer-text', t.footerText);
+    
+    // Update status mapping for current language
+    statusMap = {
+        '0': { text: t.statusPending, class: 'status-0' },
+        '1': { text: t.statusCompleted, class: 'status-1' },
+        '2': { text: t.statusProcessing, class: 'status-2' },
+        '-1': { text: t.statusFailed, class: 'status--1' }
+    };
+    
+    // Update no data message if visible
+    const noDataCell = document.getElementById('no-data-message');
+    if (noDataCell) {
+        noDataCell.textContent = t.noDataMessage;
+    }
+    
+    // Refresh table if data exists
+    if (typeof allData !== 'undefined' && allData.length > 0) {
+        updateTable(filteredData);
+        updateStats(allData);
+    }
+    
+    console.log('Language update completed');
+}
 
-        // Configuration
-        const CSV_URL = 'https://raw.githubusercontent.com/smart2cloud/x7z9kq_log/refs/heads/master/x7z9kq_log/x7z9kq_log.csv';
+// Configuration
+const CSV_URL = 'https://raw.githubusercontent.com/smart2cloud/x7z9kq_log/refs/heads/master/x7z9kq_log/x7z9kq_log.csv';
 
-        // Global variables
-        let allData = [];
-        let currentPage = 1;
-        let filteredData = [];
-        let currentFilter = 'all';
-        let csvContent = null; // Store the CSV content for refresh operations
+// Global variables
+let allData = [];
+let currentPage = 1;
+let filteredData = [];
+let currentFilter = 'all';
+let csvContent = null;
+
+// DOM Elements - Initialize after DOM is loaded
+let tableBody, totalImagesEl, processedImagesEl, processingImagesEl, lastProcessedEl;
+let refreshBtn, searchInput, paginationContainer, loadingIndicator, uploadBtn, csvFileInput;
+let filterAllBtn, filterPendingBtn, filterCompletedBtn, filterFailedBtn;
+const itemsPerPage = 15;
+
+// Status mapping (will be updated by language function)
+let statusMap = {
+    '0': { text: 'Pending', class: 'status-0' },
+    '1': { text: 'Completed', class: 'status-1' },
+    '2': { text: 'Processing', class: 'status-2' },
+    '-1': { text: 'Failed', class: 'status--1' }
+};
+
+// Initialize DOM elements
+function initDOMElements() {
+    tableBody = document.getElementById('table-body');
+    totalImagesEl = document.getElementById('total-images');
+    processedImagesEl = document.getElementById('processed-images');
+    processingImagesEl = document.getElementById('processing-images');
+    lastProcessedEl = document.getElementById('last-processed');
+    refreshBtn = document.getElementById('refresh-btn');
+    searchInput = document.getElementById('search-input');
+    paginationContainer = document.getElementById('pagination');
+    loadingIndicator = document.getElementById('loading');
+    uploadBtn = document.getElementById('upload-btn');
+    csvFileInput = document.getElementById('csvFile');
+    filterAllBtn = document.getElementById('filter-all');
+    filterPendingBtn = document.getElementById('filter-pending');
+    filterCompletedBtn = document.getElementById('filter-completed');
+    filterFailedBtn = document.getElementById('filter-failed');
+    
+    console.log('DOM elements initialized');
+}
+
+// Load CSV from GitHub URL (only when refresh button is clicked)
+async function loadCSVFromGitHub() {
+    const t = translations[currentLang];
+    if (loadingIndicator) loadingIndicator.style.display = 'block';
+
+    try {
+        console.log('Loading CSV from GitHub...');
         
-        // DOM Elements
-        const tableBody = document.getElementById('table-body');
-        const totalImagesEl = document.getElementById('total-images');
-        const processedImagesEl = document.getElementById('processed-images');
-        const processingImagesEl = document.getElementById('processing-images');
-        const lastProcessedEl = document.getElementById('last-processed');
-        const refreshBtn = document.getElementById('refresh-btn');
-        const searchInput = document.getElementById('search-input');
-        const paginationContainer = document.getElementById('pagination');
-        const loadingIndicator = document.getElementById('loading');
-        const uploadBtn = document.getElementById('upload-btn');
-        const csvFileInput = document.getElementById('csvFile');
-        const filterAllBtn = document.getElementById('filter-all');
-        const filterPendingBtn = document.getElementById('filter-pending');
-        const filterCompletedBtn = document.getElementById('filter-completed');
-        const filterFailedBtn = document.getElementById('filter-failed');
-        const itemsPerPage = 15;
-
-        // Status mapping (will be updated by language function)
-        let statusMap = {
-            '0': { text: 'Pending', class: 'status-0' },
-            '1': { text: 'Completed', class: 'status-1' },
-            '2': { text: 'Processing', class: 'status-2' },
-            '-1': { text: 'Failed', class: 'status--1' }
-        };
-
-        // Load CSV from GitHub URL (only when refresh button is clicked)
-        async function loadCSVFromGitHub() {
-            const t = translations[currentLang];
-            loadingIndicator.style.display = 'block';
-
-            try {
-                console.log('Loading CSV from GitHub...');
-                
-                // Try multiple approaches to load the CSV
-                let csvText = null;
-                
-                // Method 1: Direct fetch (works in some browsers/environments)
-                try {
-                    const response = await fetch(CSV_URL, {
-                        method: 'GET',
-                        mode: 'cors',
-                        headers: {
-                            'Accept': 'text/csv,text/plain,*/*',
-                        }
-                    });
-
-                    if (response.ok) {
-                        csvText = await response.text();
-                        console.log('CSV loaded successfully via direct fetch, length:', csvText.length);
-                    }
-                } catch (directFetchError) {
-                    console.log('Direct fetch failed:', directFetchError.message);
-                }
-
-                if (!csvText || csvText.trim().length === 0) {
-                    throw new Error('Unable to load CSV data from any source');
-                }
-
-                csvContent = csvText;
-                const parsedData = parseCSV(csvContent);
-                console.log('Parsed data:', parsedData.length, 'rows');
-
-                initDashboard(parsedData);
-                showNotification(t.dataLoadedSuccessfully, 'success');
-
-            } catch (error) {
-                console.error('Error loading CSV from GitHub:', error);
-                
-                // Show user-friendly error message
-                const noDataCell = document.getElementById('no-data-message');
-                if (noDataCell) {
-                    noDataCell.textContent = t.errorLoadingData;
-                    noDataCell.style.color = 'var(--danger)';
-                }
-                
-                // Display error notification
-                showNotification(t.errorLoadingData, 'error');
-                
-            } finally {
-                loadingIndicator.style.display = 'none';
-            }
-        }
-
-        // Parse CSV text to array of objects
-        function parseCSV(csvText) {
-            const lines = csvText.trim().split('\n');
-            if (lines.length < 2) {
-                throw new Error('CSV file must have at least a header row and one data row');
-            }
-            
-            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
-            console.log('CSV Headers:', headers);
-            
-            return lines.slice(1).map((line, index) => {
-                // Handle commas within quoted fields
-                let fields = [];
-                let inQuotes = false;
-                let currentField = '';
-                
-                for (let i = 0; i < line.length; i++) {
-                    const char = line[i];
-                    
-                    if (char === '"') {
-                        inQuotes = !inQuotes;
-                    } else if (char === ',' && !inQuotes) {
-                        fields.push(currentField);
-                        currentField = '';
-                    } else {
-                        currentField += char;
-                    }
-                }
-                
-                fields.push(currentField); // Add the last field
-                
-                // Create object from headers and fields
-                const obj = {};
-                headers.forEach((header, i) => {
-                    obj[header] = fields[i] !== undefined ? fields[i].trim().replace(/"/g, '') : '';
-                });
-                
-                return obj;
-            }).filter(row => {
-                // Filter out empty rows
-                return Object.values(row).some(value => value !== '');
-            });
-        }
-
-        // Update table with data
-        function updateTable(data) {
-            tableBody.innerHTML = '';
-            
-            if (data.length === 0) {
-                const t = translations[currentLang];
-                tableBody.innerHTML = `
-                    <tr>
-                        <td colspan="7" style="text-align: center;" id="no-data-message">${t.noDataMessage}</td>
-                    </tr>
-                `;
-                return;
-            }
-            
-            // Calculate start and end index for current page
-            const startIndex = (currentPage - 1) * itemsPerPage;
-            const endIndex = Math.min(startIndex + itemsPerPage, data.length);
-            const pageData = data.slice(startIndex, endIndex);
-            
-            pageData.forEach(item => {
-                const row = document.createElement('tr');
-                
-                // Format size in KB
-                const sizeInKB = item.size ? (parseInt(item.size) / 1024).toFixed(2) : '0.00';
-                
-                // Get status text and class
-                const status = statusMap[item.status] || { text: translations[currentLang].statusUnknown, class: 'status-unknown' };
-                
-                row.innerHTML = `
-                    <td>${item.subfolder || '-'}</td>
-                    <td>${item.image_name || '-'}</td>
-                    <td>${sizeInKB} KB</td>
-                    <td>${item.created_date || '-'}</td>
-                    <td><span class="status-badge ${status.class}">${status.text}</span></td>
-                    <td>${item.updated_date || '-'}</td>
-                    <td>${item.log || '-'}</td>
-                `;
-                
-                tableBody.appendChild(row);
-            });
-            
-            updatePagination(data.length);
-        }
-
-        // Update statistics
-        function updateStats(data) {
-            const totalImages = data.length;
-            const processedImages = data.filter(item => item.status === '1').length;
-            const processingImages = data.filter(item => item.status === '2').length;
-            
-            totalImagesEl.textContent = totalImages;
-            processedImagesEl.textContent = processedImages;
-            processingImagesEl.textContent = processingImages;
-            
-            // Find the latest updated date among ALL images (not just processed ones)
-            let latestDate = null;
-            data.forEach(item => {
-                if (item.updated_date && item.updated_date.trim() !== '') {
-                    // Try different date formats
-                    let updatedDate = null;
-                    
-                    // Try parsing as-is first
-                    updatedDate = new Date(item.updated_date);
-                    
-                    // If that fails, try common formats
-                    if (isNaN(updatedDate.getTime())) {
-                        // Try parsing common date formats
-                        const dateFormats = [
-                            item.updated_date.replace(/[-\/]/g, '/'), // Replace dashes with slashes
-                            item.updated_date.replace(/\//g, '-'), // Replace slashes with dashes
-                        ];
-                        
-                        for (const format of dateFormats) {
-                            updatedDate = new Date(format);
-                            if (!isNaN(updatedDate.getTime())) {
-                                break;
-                            }
-                        }
-                    }
-                    
-                    if (!isNaN(updatedDate.getTime()) && (!latestDate || updatedDate > latestDate)) {
-                        latestDate = updatedDate;
-                    }
+        let csvText = null;
+        
+        try {
+            const response = await fetch(CSV_URL, {
+                method: 'GET',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'text/csv,text/plain,*/*',
                 }
             });
+
+            if (response.ok) {
+                csvText = await response.text();
+                console.log('CSV loaded successfully via direct fetch, length:', csvText.length);
+            }
+        } catch (directFetchError) {
+            console.log('Direct fetch failed:', directFetchError.message);
+        }
+
+        if (!csvText || csvText.trim().length === 0) {
+            throw new Error('Unable to load CSV data from any source');
+        }
+
+        csvContent = csvText;
+        const parsedData = parseCSV(csvContent);
+        console.log('Parsed data:', parsedData.length, 'rows');
+
+        initDashboard(parsedData);
+        showNotification(t.dataLoadedSuccessfully, 'success');
+
+    } catch (error) {
+        console.error('Error loading CSV from GitHub:', error);
+        
+        const noDataCell = document.getElementById('no-data-message');
+        if (noDataCell) {
+            noDataCell.textContent = t.errorLoadingData;
+            noDataCell.style.color = 'var(--danger)';
+        }
+        
+        showNotification(t.errorLoadingData, 'error');
+        
+    } finally {
+        if (loadingIndicator) loadingIndicator.style.display = 'none';
+    }
+}
+
+// Parse CSV text to array of objects
+function parseCSV(csvText) {
+    const lines = csvText.trim().split('\n');
+    if (lines.length < 2) {
+        throw new Error('CSV file must have at least a header row and one data row');
+    }
+    
+    const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+    console.log('CSV Headers:', headers);
+    
+    return lines.slice(1).map((line, index) => {
+        let fields = [];
+        let inQuotes = false;
+        let currentField = '';
+        
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
             
-            if (latestDate) {
-                const formattedDate = latestDate.toLocaleString();
-                lastProcessedEl.textContent = formattedDate;
+            if (char === '"') {
+                inQuotes = !inQuotes;
+            } else if (char === ',' && !inQuotes) {
+                fields.push(currentField);
+                currentField = '';
             } else {
-                lastProcessedEl.textContent = translations[currentLang].noUpdatedImages;
+                currentField += char;
             }
-        }
-
-        // Update pagination
-        function updatePagination(totalItems) {
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            paginationContainer.innerHTML = '';
-            
-            if (totalPages <= 1) {
-                return;
-            }
-            
-            // Previous button
-            const prevBtn = document.createElement('button');
-            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    updateTable(filteredData);
-                }
-            });
-            paginationContainer.appendChild(prevBtn);
-            
-            // Page buttons
-            let startPage = Math.max(1, currentPage - 2);
-            let endPage = Math.min(totalPages, startPage + 4);
-            
-            if (endPage - startPage < 4) {
-                startPage = Math.max(1, endPage - 4);
-            }
-            
-            for (let i = startPage; i <= endPage; i++) {
-                const pageBtn = document.createElement('button');
-                pageBtn.textContent = i;
-                pageBtn.classList.toggle('active', i === currentPage);
-                pageBtn.addEventListener('click', () => {
-                    currentPage = i;
-                    updateTable(filteredData);
-                });
-                paginationContainer.appendChild(pageBtn);
-            }
-            
-            // Next button
-            const nextBtn = document.createElement('button');
-            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    updateTable(filteredData);
-                }
-            });
-            paginationContainer.appendChild(nextBtn);
-        }
-
-        // Filter data based on search and status
-        function filterData() {
-            const searchTerm = searchInput.value.toLowerCase();
-            
-            filteredData = allData.filter(item => {
-                // Filter by search term
-                const matchesSearch = 
-                    (item.subfolder && item.subfolder.toLowerCase().includes(searchTerm)) || 
-                    (item.image_name && item.image_name.toLowerCase().includes(searchTerm));
-                
-                // Filter by status
-                let statusMatch = true;
-                if (currentFilter === 'pending') {
-                    statusMatch = item.status === '0';
-                } else if (currentFilter === 'completed') {
-                    statusMatch = item.status === '1';
-                } else if (currentFilter === 'failed') {
-                    statusMatch = item.status === '-1';
-                }
-                
-                return matchesSearch && statusMatch;
-            });
-            
-            currentPage = 1; // Reset to first page when filtering
-            updateTable(filteredData);
-        }
-
-        // Initialize the dashboard with data
-        function initDashboard(data) {
-            allData = data;
-            filteredData = [...allData];
-            updateStats(allData);
-            updateTable(filteredData);
-            
-            // Enable UI elements
-            refreshBtn.disabled = false;
-            searchInput.disabled = false;
-            filterAllBtn.disabled = false;
-            filterPendingBtn.disabled = false;
-            filterCompletedBtn.disabled = false;
-            filterFailedBtn.disabled = false;
         }
         
-        // Process uploaded CSV file
-        function processCSVFile(file) {
-            if (!file) {
+        fields.push(currentField);
+        
+        const obj = {};
+        headers.forEach((header, i) => {
+            obj[header] = fields[i] !== undefined ? fields[i].trim().replace(/"/g, '') : '';
+        });
+        
+        return obj;
+    }).filter(row => {
+        return Object.values(row).some(value => value !== '');
+    });
+}
+
+// Update table with data
+function updateTable(data) {
+    if (!tableBody) return;
+    
+    tableBody.innerHTML = '';
+    
+    if (data.length === 0) {
+        const t = translations[currentLang];
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" style="text-align: center;" id="no-data-message">${t.noDataMessage}</td>
+            </tr>
+        `;
+        return;
+    }
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, data.length);
+    const pageData = data.slice(startIndex, endIndex);
+    
+    pageData.forEach(item => {
+        const row = document.createElement('tr');
+        
+        const sizeInKB = item.size ? (parseInt(item.size) / 1024).toFixed(2) : '0.00';
+        const status = statusMap[item.status] || { text: translations[currentLang].statusUnknown, class: 'status-unknown' };
+        
+        row.innerHTML = `
+            <td>${item.subfolder || '-'}</td>
+            <td>${item.image_name || '-'}</td>
+            <td>${sizeInKB} KB</td>
+            <td>${item.created_date || '-'}</td>
+            <td><span class="status-badge ${status.class}">${status.text}</span></td>
+            <td>${item.updated_date || '-'}</td>
+            <td>${item.log || '-'}</td>
+        `;
+        
+        tableBody.appendChild(row);
+    });
+    
+    updatePagination(data.length);
+}
+
+// Update statistics
+function updateStats(data) {
+    if (!totalImagesEl || !processedImagesEl || !processingImagesEl || !lastProcessedEl) return;
+    
+    const totalImages = data.length;
+    const processedImages = data.filter(item => item.status === '1').length;
+    const processingImages = data.filter(item => item.status === '2').length;
+    
+    totalImagesEl.textContent = totalImages;
+    processedImagesEl.textContent = processedImages;
+    processingImagesEl.textContent = processingImages;
+    
+    let latestDate = null;
+    data.forEach(item => {
+        if (item.updated_date && item.updated_date.trim() !== '') {
+            let updatedDate = new Date(item.updated_date);
+            
+            if (isNaN(updatedDate.getTime())) {
+                const dateFormats = [
+                    item.updated_date.replace(/[-\/]/g, '/'),
+                    item.updated_date.replace(/\//g, '-'),
+                ];
+                
+                for (const format of dateFormats) {
+                    updatedDate = new Date(format);
+                    if (!isNaN(updatedDate.getTime())) {
+                        break;
+                    }
+                }
+            }
+            
+            if (!isNaN(updatedDate.getTime()) && (!latestDate || updatedDate > latestDate)) {
+                latestDate = updatedDate;
+            }
+        }
+    });
+    
+    if (latestDate) {
+        const formattedDate = latestDate.toLocaleString();
+        lastProcessedEl.textContent = formattedDate;
+    } else {
+        lastProcessedEl.textContent = translations[currentLang].noUpdatedImages;
+    }
+}
+
+// Update pagination
+function updatePagination(totalItems) {
+    if (!paginationContainer) return;
+    
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    paginationContainer.innerHTML = '';
+    
+    if (totalPages <= 1) {
+        return;
+    }
+    
+    const prevBtn = document.createElement('button');
+    prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            updateTable(filteredData);
+        }
+    });
+    paginationContainer.appendChild(prevBtn);
+    
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, startPage + 4);
+    
+    if (endPage - startPage < 4) {
+        startPage = Math.max(1, endPage - 4);
+    }
+    
+    for (let i = startPage; i <= endPage; i++) {
+        const pageBtn = document.createElement('button');
+        pageBtn.textContent = i;
+        pageBtn.classList.toggle('active', i === currentPage);
+        pageBtn.addEventListener('click', () => {
+            currentPage = i;
+            updateTable(filteredData);
+        });
+        paginationContainer.appendChild(pageBtn);
+    }
+    
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updateTable(filteredData);
+        }
+    });
+    paginationContainer.appendChild(nextBtn);
+}
+
+// Filter data based on search and status
+function filterData() {
+    if (!searchInput) return;
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    filteredData = allData.filter(item => {
+        const matchesSearch = 
+            (item.subfolder && item.subfolder.toLowerCase().includes(searchTerm)) || 
+            (item.image_name && item.image_name.toLowerCase().includes(searchTerm));
+        
+        let statusMatch = true;
+        if (currentFilter === 'pending') {
+            statusMatch = item.status === '0';
+        } else if (currentFilter === 'completed') {
+            statusMatch = item.status === '1';
+        } else if (currentFilter === 'failed') {
+            statusMatch = item.status === '-1';
+        }
+        
+        return matchesSearch && statusMatch;
+    });
+    
+    currentPage = 1;
+    updateTable(filteredData);
+}
+
+// Initialize the dashboard with data
+function initDashboard(data) {
+    allData = data;
+    filteredData = [...allData];
+    updateStats(allData);
+    updateTable(filteredData);
+    
+    // Enable UI elements
+    if (refreshBtn) refreshBtn.disabled = false;
+    if (searchInput) searchInput.disabled = false;
+    if (filterAllBtn) filterAllBtn.disabled = false;
+    if (filterPendingBtn) filterPendingBtn.disabled = false;
+    if (filterCompletedBtn) filterCompletedBtn.disabled = false;
+    if (filterFailedBtn) filterFailedBtn.disabled = false;
+}
+
+// Process uploaded CSV file
+function processCSVFile(file) {
+    if (!file) {
+        showNotification(translations[currentLang].selectFileFirst, 'error');
+        return;
+    }
+
+    const t = translations[currentLang];
+    if (loadingIndicator) loadingIndicator.style.display = 'block';
+    
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        try {
+            csvContent = event.target.result;
+            const parsedData = parseCSV(csvContent);
+            initDashboard(parsedData);
+            showNotification('CSV file uploaded successfully!', 'success');
+        } catch (error) {
+            console.error('Error parsing CSV file:', error);
+            showNotification('Error parsing CSV file: ' + error.message, 'error');
+        } finally {
+            if (loadingIndicator) loadingIndicator.style.display = 'none';
+        }
+    };
+    reader.onerror = function() {
+        showNotification('Error reading the CSV file.', 'error');
+        if (loadingIndicator) loadingIndicator.style.display = 'none';
+    };
+    reader.readAsText(file);
+}
+
+// Show notification function
+function showNotification(message, type = 'info') {
+    let notification = document.getElementById('notification');
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'notification';
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 4px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            max-width: 300px;
+            word-wrap: break-word;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        document.body.appendChild(notification);
+    }
+
+    notification.textContent = message;
+    notification.className = `notification-${type}`;
+    
+    switch(type) {
+        case 'success':
+            notification.style.backgroundColor = '#10b981';
+            break;
+        case 'error':
+            notification.style.backgroundColor = '#ef4444';
+            break;
+        case 'info':
+        default:
+            notification.style.backgroundColor = '#3b82f6';
+            break;
+    }
+
+    notification.style.opacity = '1';
+
+    setTimeout(() => {
+        notification.style.opacity = '0';
+    }, 4000);
+}
+
+// Set up event listeners
+function setupEventListeners() {
+    console.log('Setting up event listeners...');
+    
+    // Language toggle button - WITH MULTIPLE FALLBACK SELECTORS
+    const langToggleBtn = document.getElementById('lang-toggle') || 
+                         document.querySelector('[data-lang-toggle]') ||
+                         document.querySelector('.lang-toggle') ||
+                         document.querySelector('button[onclick*="toggle"]');
+    
+    if (langToggleBtn) {
+        console.log('Language toggle button found:', langToggleBtn);
+        // Remove any existing event listeners
+        langToggleBtn.removeEventListener('click', toggleLanguage);
+        // Add the event listener
+        langToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Language toggle button clicked');
+            toggleLanguage();
+        });
+        console.log('Language toggle event listener added');
+    } else {
+        console.error('Language toggle button not found! Make sure you have an element with id="lang-toggle"');
+    }
+    
+    // Upload button click handler
+    if (uploadBtn) {
+        uploadBtn.addEventListener('click', () => {
+            if (!csvFileInput || !csvFileInput.files || csvFileInput.files.length === 0) {
                 showNotification(translations[currentLang].selectFileFirst, 'error');
                 return;
             }
-
-            const t = translations[currentLang];
-            loadingIndicator.style.display = 'block';
-            
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                try {
-                    csvContent = event.target.result;
-                    const parsedData = parseCSV(csvContent);
-                    initDashboard(parsedData);
-                    showNotification('CSV file uploaded successfully!', 'success');
-                } catch (error) {
-                    console.error('Error parsing CSV file:', error);
-                    showNotification('Error parsing CSV file: ' + error.message, 'error');
-                } finally {
-                    loadingIndicator.style.display = 'none';
-                }
-            };
-            reader.onerror = function() {
-                showNotification('Error reading the CSV file.', 'error');
-                loadingIndicator.style.display = 'none';
-            };
-            reader.readAsText(file);
-        }
-
-        // Show notification function
-        function showNotification(message, type = 'info') {
-            // Create notification element if it doesn't exist
-            let notification = document.getElementById('notification');
-            if (!notification) {
-                notification = document.createElement('div');
-                notification.id = 'notification';
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    padding: 12px 20px;
-                    border-radius: 4px;
-                    color: white;
-                    font-weight: 500;
-                    z-index: 1000;
-                    max-width: 300px;
-                    word-wrap: break-word;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                `;
-                document.body.appendChild(notification);
-            }
-
-            // Set message and style based on type
-            notification.textContent = message;
-            notification.className = `notification-${type}`;
-            
-            switch(type) {
-                case 'success':
-                    notification.style.backgroundColor = '#10b981';
-                    break;
-                case 'error':
-                    notification.style.backgroundColor = '#ef4444';
-                    break;
-                case 'info':
-                default:
-                    notification.style.backgroundColor = '#3b82f6';
-                    break;
-            }
-
-            // Show notification
-            notification.style.opacity = '1';
-
-            // Hide after 4 seconds
-            setTimeout(() => {
-                notification.style.opacity = '0';
-            }, 4000);
-        }
-        
-        // Set up event listeners
-        function setupEventListeners() {
-            // Language toggle button
-            const langToggleBtn = document.getElementById('lang-toggle');
-            langToggleBtn.addEventListener('click', toggleLanguage);
-            
-            // Upload button click handler
-            uploadBtn.addEventListener('click', () => {
-                if (!csvFileInput.files || csvFileInput.files.length === 0) {
-                    showNotification(translations[currentLang].selectFileFirst, 'error');
-                    return;
-                }
-                processCSVFile(csvFileInput.files[0]);
-            });
-            
-            // Refresh data button click handler - ONLY loads from GitHub when clicked
-            refreshBtn.addEventListener('click', async () => {
-                await loadCSVFromGitHub();
-            });
-            
-            // Search input event handler
-            searchInput.addEventListener('input', filterData);
-            
-            // Filter button handlers
-            filterAllBtn.addEventListener('click', () => {
-                setActiveFilter('all');
-                currentFilter = 'all';
-                filterData();
-            });
-            
-            filterPendingBtn.addEventListener('click', () => {
-                setActiveFilter('pending');
-                currentFilter = 'pending';
-                filterData();
-            });
-            
-            filterCompletedBtn.addEventListener('click', () => {
-                setActiveFilter('completed');
-                currentFilter = 'completed';
-                filterData();
-            });
-            
-            filterFailedBtn.addEventListener('click', () => {
-                setActiveFilter('failed');
-                currentFilter = 'failed';
-                filterData();
-            });
-            
-            // CSV file input change handler - just enable upload button, don't auto-process
-            csvFileInput.addEventListener('change', function(e) {
-                const t = translations[currentLang];
-                if (e.target.files && e.target.files.length > 0) {
-                    uploadBtn.disabled = false;
-                    showNotification(t.fileSelectedMessage, 'info');
-                } else {
-                    uploadBtn.disabled = true;
-                }
-            });
-        }
-        
-        // Set active filter button
-        function setActiveFilter(filter) {
-            filterAllBtn.classList.toggle('active', filter === 'all');
-            filterPendingBtn.classList.toggle('active', filter === 'pending');
-            filterCompletedBtn.classList.toggle('active', filter === 'completed');
-            filterFailedBtn.classList.toggle('active', filter === 'failed');
-        }
-        
-        // Initialize the dashboard - FIXED: Made async and properly structured
-        async function initializeDashboard() {
-            // Initial UI setup - start with disabled state, no auto-load
-            refreshBtn.disabled = true;
-            searchInput.disabled = true;
-            filterAllBtn.disabled = true;
-            filterPendingBtn.disabled = true;
-            filterCompletedBtn.disabled = true;
-            filterFailedBtn.disabled = true;
-            uploadBtn.disabled = true;
-            
-            setupEventListeners();
-            
-            // Show initial message to upload CSV or click refresh
-            const t = translations[currentLang];
-            tableBody.innerHTML = `
-                <tr>
-                    <td colspan="7" style="text-align: center;" id="no-data-message">${t.noDataMessage}</td>
-                </tr>
-            `;
-            
-            // Enable only the refresh button initially
-            refreshBtn.disabled = false;
-            
-            console.log('Dashboard initialized. Click "Refresh Data" to load from GitHub or upload a CSV file.');
-            
-            // Try to load CSV from GitHub on initial load
-            try {
-                await loadCSVFromGitHub();
-            } catch (error) {
-                console.log('Failed to auto-load from GitHub:', error.message);
-                // This is expected behavior - user can manually refresh or upload
-            }
-        }
+            processCSVFile(csvFileInput.files[0]);
+        });
+    }
     
-        // Initialize the dashboard when DOM is loaded
-        window.addEventListener('DOMContentLoaded', initializeDashboard);
+    // Refresh data button click handler
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', async () => {
+            await loadCSVFromGitHub();
+        });
+    }
+    
+    // Search input event handler
+    if (searchInput) {
+        searchInput.addEventListener('input', filterData);
+    }
+    
+    // Filter button handlers
+    if (filterAllBtn) {
+        filterAllBtn.addEventListener('click', () => {
+            setActiveFilter('all');
+            currentFilter = 'all';
+            filterData();
+        });
+    }
+    
+    if (filterPendingBtn) {
+        filterPendingBtn.addEventListener('click', () => {
+            setActiveFilter('pending');
+            currentFilter = 'pending';
+            filterData();
+        });
+    }
+    
+    if (filterCompletedBtn) {
+        filterCompletedBtn.addEventListener('click', () => {
+            setActiveFilter('completed');
+            currentFilter = 'completed';
+            filterData();
+        });
+    }
+    
+    if (filterFailedBtn) {
+        filterFailedBtn.addEventListener('click', () => {
+            setActiveFilter('failed');
+            currentFilter = 'failed';
+            filterData();
+        });
+    }
+    
+    // CSV file input change handler
+    if (csvFileInput) {
+        csvFileInput.addEventListener('change', function(e) {
+            const t = translations[currentLang];
+            if (e.target.files && e.target.files.length > 0) {
+                if (uploadBtn) uploadBtn.disabled = false;
+                showNotification(t.fileSelectedMessage, 'info');
+            } else {
+                if (uploadBtn) uploadBtn.disabled = true;
+            }
+        });
+    }
+    
+    console.log('Event listeners setup completed');
+}
+
+// Set active filter button
+function setActiveFilter(filter) {
+    if (filterAllBtn) filterAllBtn.classList.toggle('active', filter === 'all');
+    if (filterPendingBtn) filterPendingBtn.classList.toggle('active', filter === 'pending');
+    if (filterCompletedBtn) filterCompletedBtn.classList.toggle('active', filter === 'completed');
+    if (filterFailedBtn) filterFailedBtn.classList.toggle('active', filter === 'failed');
+}
+
+// Initialize the dashboard
+async function initializeDashboard() {
+    console.log('Initializing dashboard...');
+    
+    // Initialize DOM elements first
+    initDOMElements();
+    
+    // Initial UI setup
+    if (refreshBtn) refreshBtn.disabled = true;
+    if (searchInput) searchInput.disabled = true;
+    if (filterAllBtn) filterAllBtn.disabled = true;
+    if (filterPendingBtn) filterPendingBtn.disabled = true;
+    if (filterCompletedBtn) filterCompletedBtn.disabled = true;
+    if (filterFailedBtn) filterFailedBtn.disabled = true;
+    if (uploadBtn) uploadBtn.disabled = true;
+    
+    // Setup event listeners
+    setupEventListeners();
+    
+    // Initialize language (this will set up the initial UI text)
+    updateLanguage();
+    
+    // Show initial message
+    const t = translations[currentLang];
+    if (tableBody) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" style="text-align: center;" id="no-data-message">${t.noDataMessage}</td>
+            </tr>
+        `;
+    }
+    
+    // Enable refresh button
+    if (refreshBtn) refreshBtn.disabled = false;
+    
+    console.log('Dashboard initialized successfully');
+    
+    // Try to load CSV from GitHub on initial load
+    try {
+        await loadCSVFromGitHub();
+    } catch (error) {
+        console.log('Failed to auto-load from GitHub:', error.message);
+    }
+}
+
+// Initialize when DOM is loaded
+window.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing dashboard...');
+    initializeDashboard();
+});
+
+// Also initialize if DOM is already loaded
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', initializeDashboard);
+} else {
+    initializeDashboard();
+}
     </script>
     </body>
 </html>
